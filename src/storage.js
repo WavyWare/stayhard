@@ -25,7 +25,7 @@ class storage {
             name,
             type,
             color,
-            entries: {}
+            entries: []
         }
 
         habits.push(habit);
@@ -37,6 +37,15 @@ class storage {
     }
 
     getHabit(id) {
-        this.getHabits().filter(habit => habit.id === id);
+        return this.getHabits().filter(habit => habit.id === id)[0];
+    }
+
+    updateEntry(habitId, date, value) {
+        let habit = this.getHabit(habitId);
+        let entries = habit.entries.filter(entry => entry.date !== date);
+        entries.push({date, value});
+        habit.entries = entries;
+        let habitsWithoutChanged = this.getHabits().filter(habit => habit.id !== habitId);
+        this.setHabits(habitsWithoutChanged.push(habit));
     }
 }
