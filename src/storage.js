@@ -1,6 +1,6 @@
 class storage {
     constructor() {
-        localStorage.setItem("habits", "[]")
+        localStorage.setItem("habits", JSON.stringify([]))
     }
 
     getHabits() {
