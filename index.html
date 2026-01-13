@@ -1,22 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>stay hard! app that helps you track your goals</title>
-        <link rel="stylesheet" href="src/style.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Stay Hard</h1>
-            <p>app that helps you track your goals</p>
-            <div class="habits-container">
-                <span class="gray">There are no habits... </span>
-                <div class="habit-calendar">
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Goal Tracker</h1>
+        <p class="subtitle">track your progress with elegance</p>
+        <div class="color-picker" id="themePicker"></div>
+    </header>
 
-
-                </div>
-            </div>
+    <div class="goals-section">
+        <div class="goals-list">
+            <h2>Your Goals</h2>
+            <div id="goalsList"></div>
         </div>
-    <script src="src/index.js"></script>
-    </body>
+
+        <div class="goal-form">
+            <h2>New Goal</h2>
+            <form id="addGoalForm"></form>
+        </div>
+    </div>
+
+    <div class="grid-section">
+        <h2>Progress Grid</h2>
+        <div class="legend" id="chartLegend"></div>
+        <div class="grid-container" id="gridsContainer"></div>
+    </div>
+</div>
+
+<div class="modal" id="editModal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeEditModal()">✕</button>
+        <h2>Edit Goal</h2>
+        <form id="editGoalForm"></form>
+    </div>
+</div>
+
+<script src="src/utils.js"></script>
+<script src="src/constants.js"></script>
+<script src="src/storage.js"></script>
+<script src="src/theme.js"></script>
+<script src="src/goals-manager.js"></script>
+<script src="src/calendar-utils.js"></script>
+<script src="src/level-calculator.js"></script>
+<script src="src/grid-renderer.js"></script>
+<script src="src/chart-renderer.js"></script>
+<script src="src/stats-calculator.js"></script>
+<script src="src/form-builder.js"></script>
+<script src="src/form-handler.js"></script>
+<script src="src/goal-list-renderer.js"></script>
+<script src="src/legend-renderer.js"></script>
+<script src="src/ui-controller.js"></script>
+<script src="src/app.js"></script>
+</body>
 </html>
